@@ -1,7 +1,5 @@
 package domain;
 
-import util.InputUtil;
-
 public class Car implements Comparable<Car> {
     private static final String LOAD = "-";
     private static final String BLANK_REGEX = "\\s*";

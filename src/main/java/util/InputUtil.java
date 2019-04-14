@@ -29,8 +29,4 @@ public class InputUtil {
     private static String getString() {
         return SCANNER.nextLine();
     }
-
-    public static void test(Object o) {
-        System.out.println(o);
-    }
 }

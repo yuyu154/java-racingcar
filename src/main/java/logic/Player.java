@@ -2,7 +2,7 @@ package logic;
 
 import domain.Car;
 import domain.Game;
-import util.InputUtil;
+import util.RandomNumberMaker;
 
 import java.util.List;
 
@@ -21,8 +21,6 @@ public class Player {
     }
 
     public void play() {
-        InputUtil.test(gameCount);
-        InputUtil.test(carList);
         Game racingGame = new Game(carList, gameCount);
         OutputView.printGameResult(racingGame);
         OutputView.printWinners(racingGame);
