@@ -2,7 +2,7 @@ package domain;
 
 import util.InputUtil;
 
-public class Car {
+public class Car implements Comparable<Car> {
     private static final String LOAD = "-";
 
     private final String name;
@@ -27,8 +27,22 @@ public class Car {
         return ret.toString();
     }
 
+    public int getPosition() {
+        return position;
+    }
+
     @Override
     public String toString() {
         return name;
+    }
+
+    @Override
+    public int compareTo(Car o) {
+        return new Integer(this.position)
+                .compareTo(o.position);
+    }
+
+    public boolean isMaxPositoin(int maxPosition) {
+        return this.position == maxPosition;
     }
 }

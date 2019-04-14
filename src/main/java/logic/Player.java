@@ -25,5 +25,6 @@ public class Player {
         InputUtil.test(carList);
         Game racingGame = new Game(carList, gameCount);
         OutputView.printGameResult(racingGame);
+        OutputView.printWinners(racingGame);
     }
 }

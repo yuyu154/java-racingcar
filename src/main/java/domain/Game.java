@@ -2,7 +2,11 @@ package domain;
 
 import util.RandomNumberMaker;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 public class Game {
     private List<Car> carList;
@@ -31,5 +35,20 @@ public class Game {
 
     private void printCar(Car car) {
         System.out.println(car + ":" + car.getLine());
+    }
+
+    public List<String> getWinnerList() {
+        int maxPosition = getWinnerPosition();
+        return carList.stream()
+                .filter(car -> car.isMaxPositoin(maxPosition))
+                .map(car -> car.toString())
+                .collect(Collectors.toList());
+    }
+
+    private int getWinnerPosition() {
+        List<Integer> list = carList.stream()
+                .map(car -> car.getPosition())
+                .collect(Collectors.toList());
+        return Collections.max(list);
     }
 }
