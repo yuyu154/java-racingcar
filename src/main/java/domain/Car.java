@@ -1,6 +1,10 @@
 package domain;
 
+import util.InputUtil;
+
 public class Car {
+    private static final String LOAD = "-";
+
     private final String name;
     private int position = 0;
 
@@ -13,6 +17,14 @@ public class Car {
         if (randomNumber >= 4) {
             this.position++;
         }
+    }
+
+    public String getLine() {
+        StringBuilder ret = new StringBuilder();
+        for (int i = 0; i < this.position; i++) {
+            ret.append(LOAD);
+        }
+        return ret.toString();
     }
 
     @Override
