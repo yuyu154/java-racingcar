@@ -13,6 +13,7 @@ public class InputUtil {
         try {
             return Integer.parseInt(getString());
         } catch (RuntimeException e) {
+            System.out.println("숫자를 입력하세요");
             return getInt();
         }
     }

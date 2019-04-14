@@ -4,12 +4,27 @@ import util.InputUtil;
 
 public class Car implements Comparable<Car> {
     private static final String LOAD = "-";
+    private static final String BLANK_REGEX = "\\s*";
 
     private final String name;
     private int position = 0;
 
     public Car(String name) {
         this.name = name;
+        checkIfValidName();
+        checkIfBlank();
+    }
+
+    private void checkIfBlank() {
+        if (name.matches(BLANK_REGEX)) {
+            throw new IllegalArgumentException("이름에 빈칸을 입력하지마세요");
+        }
+    }
+
+    private void checkIfValidName() {
+        if (name.length() > 5) {
+            throw new IllegalArgumentException("5자 이하의 이름을 입력하세요");
+        }
     }
 
     // 추가 기능 구현
