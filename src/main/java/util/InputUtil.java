@@ -8,7 +8,7 @@ public class InputUtil {
 
     private static final Scanner SCANNER = new Scanner(System.in);
     private static final String COMMA = ",";
-    
+
     public static int getInt() {
         try {
             return Integer.parseInt(getString());
@@ -25,8 +25,11 @@ public class InputUtil {
         }
     }
 
-
     private static String getString() {
         return SCANNER.nextLine();
+    }
+
+    public static void test(Object o) {
+        System.out.println(o);
     }
 }
