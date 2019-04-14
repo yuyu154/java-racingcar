@@ -1,9 +1,9 @@
 package logic;
 
 import domain.Car;
+import domain.GameCount;
 import util.InputUtil;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -27,8 +27,13 @@ public class InputView {
                 .collect(Collectors.toList());
     }
 
-    public static int getGameCount() {
-        System.out.println("시도할 회수는 몇회인가요?");
-        return InputUtil.getInt();
+    public static GameCount getGameCount() {
+        try {
+            System.out.println("시도할 회수는 몇회인가요?");
+            return new GameCount(InputUtil.getInt());
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+            return getGameCount();
+        }
     }
 }

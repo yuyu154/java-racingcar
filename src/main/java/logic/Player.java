@@ -16,7 +16,7 @@ public class Player {
     }
 
     private void init() {
-        gameCount = InputView.getGameCount();
+        gameCount = InputView.getGameCount().intValue();
         carList = InputView.getCarsList();
     }
 
