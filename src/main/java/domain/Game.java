@@ -17,17 +17,16 @@ public class Game {
 
     public void proceedGame() {
         for (int i = 0; i < gameCount; i++) {
-            proceedOneGame();
-            printResult();
-            System.out.println();
+            moveCars();
+            printOneGame();
         }
     }
 
-    private void proceedOneGame() {
+    private void moveCars() {
         carList.forEach(car -> car.move(RandomNumberMaker.getRandomNumber()));
     }
 
-    private void printResult() {
+    private void printOneGame() {
         carList.forEach(car -> printCar(car));
     }
 
